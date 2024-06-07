@@ -1,4 +1,4 @@
-unit Unit2;
+unit Unit4;
 
 interface
 
@@ -7,10 +7,12 @@ uses
   Dialogs, StdCtrls;
 
 type
-  TForm2 = class(TForm)
+  TForm4 = class(TForm)
+    lbl1: TLabel;
+    lbl2: TLabel;
     edt1: TEdit;
-    LOGIN: TButton;
-    procedure LOGINClick(Sender: TObject);
+    btn1: TButton;
+    lbl3: TLabel;
   private
     { Private declarations }
   public
@@ -18,18 +20,10 @@ type
   end;
 
 var
-  Form2: TForm2;
+  Form4: TForm4;
 
 implementation
 
-uses Unit1;
-
 {$R *.dfm}
-
-procedure TForm2.LOGINClick(Sender: TObject);
-begin
-Form1.mm1.Items[3].Visible:= True;
-Form2.Close;
-end;
 
 end.

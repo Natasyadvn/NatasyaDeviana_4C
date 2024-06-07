@@ -3,28 +3,14 @@ unit Unit3;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus;
+  SysUtils, Classes, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset,
+  ZAbstractConnection, ZConnection;
 
 type
-  TForm3 = class(TForm)
-    mm1: TMainMenu;
-    FILE1: TMenuItem;
-    LOGIN1: TMenuItem;
-    LOGOUT1: TMenuItem;
-    DATAMASTER1: TMenuItem;
-    KATEGORI1: TMenuItem;
-    SATUAN1: TMenuItem;
-    SUPPLIER1: TMenuItem;
-    KUSTOMER1: TMenuItem;
-    RANSAKSI1: TMenuItem;
-    RANSAKSI2: TMenuItem;
-    PENJUALAN1: TMenuItem;
-    PEMBELEIAN1: TMenuItem;
-    LAPORANPENJUALAN1: TMenuItem;
-    LAPORANPENJUALAN2: TMenuItem;
-    LAPORANSTOKBARANG1: TMenuItem;
-    LAPORANBARANG1: TMenuItem;
+  TDataModule3 = class(TDataModule)
+    ds1: TDataSource;
+    con1: TZConnection;
+    zqry1: TZQuery;
   private
     { Private declarations }
   public
@@ -32,7 +18,7 @@ type
   end;
 
 var
-  Form3: TForm3;
+  DataModule3: TDataModule3;
 
 implementation
 

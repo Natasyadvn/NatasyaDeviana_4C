@@ -1,23 +1,32 @@
-object DataModule2: TDataModule2
+object Form2: TForm2
+  Left = 211
+  Top = 238
+  Width = 410
+  Height = 250
+  Caption = 'LOGIN'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   OldCreateOrder = False
-  Left = 192
-  Top = 125
-  Height = 150
-  Width = 215
-  object ds1: TDataSource
-    Left = 56
-    Top = 32
+  PixelsPerInch = 96
+  TextHeight = 13
+  object edt1: TEdit
+    Left = 136
+    Top = 56
+    Width = 121
+    Height = 21
+    TabOrder = 0
   end
-  object con1: TZConnection
-    ControlsCodePage = cGET_ACP
-    DisableSavepoints = False
-    Port = 0
-    Left = 112
-    Top = 32
-  end
-  object zqry1: TZQuery
-    Params = <>
-    Left = 16
-    Top = 40
+  object LOGIN: TButton
+    Left = 136
+    Top = 96
+    Width = 75
+    Height = 25
+    Caption = 'LOGIN'
+    TabOrder = 1
+    OnClick = LOGINClick
   end
 end
