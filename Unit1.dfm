@@ -1,9 +1,9 @@
-object Form1: TForm1
-  Left = 193
-  Top = 145
+object FormViewMenu: TFormViewMenu
+  Left = 361
+  Top = 287
   Width = 870
-  Height = 450
-  Caption = 'Form1'
+  Height = 449
+  Caption = 'Menu Utama'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Style = []
   Menu = mm1
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object mm1: TMainMenu
@@ -19,9 +20,9 @@ object Form1: TForm1
     Top = 344
     object LLL1: TMenuItem
       Caption = 'FILE'
-      object DATAMASTER1: TMenuItem
+      object mmLogin: TMenuItem
         Caption = 'LOGIN'
-        OnClick = DATAMASTER1Click
+        OnClick = mmLoginClick
       end
       object LOGOUT1: TMenuItem
         Caption = 'LOGOUT'

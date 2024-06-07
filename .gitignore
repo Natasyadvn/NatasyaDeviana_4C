@@ -1,0 +1,7 @@
+*.exe
+*.res
+*.dll
+*.drc
+*.dcu
+*.dof
+*.sql

@@ -7,10 +7,10 @@ uses
   Dialogs, Menus,Unit2;
 
 type
-  TForm1 = class(TForm)
+  TFormViewMenu = class(TForm)
     mm1: TMainMenu;
     LLL1: TMenuItem;
-    DATAMASTER1: TMenuItem;
+    mmLogin: TMenuItem;
     LOGOUT1: TMenuItem;
     DATAMASTER2: TMenuItem;
     KATEGORI1: TMenuItem;
@@ -24,7 +24,8 @@ type
     LAPORANPENJUALAN1: TMenuItem;
     LAPORANSTOKBARANG1: TMenuItem;
     LAPORANBARANG1: TMenuItem;
-    procedure DATAMASTER1Click(Sender: TObject);
+    procedure mmLoginClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,16 +33,25 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormViewMenu: TFormViewMenu;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.DATAMASTER1Click(Sender: TObject);
+procedure TFormViewMenu.mmLoginClick(Sender: TObject);
+var loginForm: TFormLogin;
 begin
-form2.Create(Application);
+//form2.Create(Application);
+   loginForm := TFormLogin.Create(Application);
+   loginForm.ShowModal;
+end;
 
+procedure TFormViewMenu.FormShow(Sender: TObject);
+begin
+  mm1.Items[1].Visible := False;
+  mm1.Items[2].Visible := False;
+  mm1.Items[3].Visible := False;
 end;
 
 end.

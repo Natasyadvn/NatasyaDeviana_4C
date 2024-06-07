@@ -1,6 +1,6 @@
-object Form2: TForm2
-  Left = 211
-  Top = 238
+object FormLogin: TFormLogin
+  Left = 658
+  Top = 267
   Width = 410
   Height = 250
   Caption = 'LOGIN'
@@ -13,20 +13,27 @@ object Form2: TForm2
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object edt1: TEdit
+  object lblRole: TLabel
+    Left = 48
+    Top = 56
+    Width = 78
+    Height = 13
+    Caption = 'Masukkan Role: '
+  end
+  object edtRole: TEdit
     Left = 136
     Top = 56
-    Width = 121
+    Width = 145
     Height = 21
     TabOrder = 0
   end
-  object LOGIN: TButton
-    Left = 136
+  object btnLogin: TButton
+    Left = 160
     Top = 96
     Width = 75
     Height = 25
-    Caption = 'LOGIN'
+    Caption = 'Login'
     TabOrder = 1
-    OnClick = LOGINClick
+    OnClick = btnLoginClick
   end
 end
