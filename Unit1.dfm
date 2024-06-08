@@ -32,6 +32,7 @@ object FormViewMenu: TFormViewMenu
       Caption = 'DATA MASTER'
       object KATEGORI1: TMenuItem
         Caption = 'KATEGORI'
+        OnClick = KATEGORI1Click
       end
       object SATUAN1: TMenuItem
         Caption = 'SATUAN'

@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus,Unit2;
+  Dialogs, Menus,Unit2, Unit5;
 
 type
   TFormViewMenu = class(TForm)
@@ -26,6 +26,7 @@ type
     LAPORANBARANG1: TMenuItem;
     procedure mmLoginClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure KATEGORI1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,6 +53,13 @@ begin
   mm1.Items[1].Visible := False;
   mm1.Items[2].Visible := False;
   mm1.Items[3].Visible := False;
+end;
+
+procedure TFormViewMenu.KATEGORI1Click(Sender: TObject);
+var form: TFormKategori;
+begin
+   form := TFormKategori.Create(Application);
+   form.ShowModal;
 end;
 
 end.
