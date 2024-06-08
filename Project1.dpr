@@ -12,9 +12,9 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TFormKategori, FormKategori);
   Application.CreateForm(TFormViewMenu, FormViewMenu);
   Application.CreateForm(TFormLogin, FormLogin);
+  Application.CreateForm(TFormKategori, FormKategori);
   Application.CreateForm(TDataModule3, DataModule3);
   Application.CreateForm(TForm4, Form4);
   Application.Run;
