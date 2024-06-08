@@ -12,6 +12,7 @@ type
     btnLogin: TButton;
     lblRole: TLabel;
     procedure btnLoginClick(Sender: TObject);
+    procedure edtRoleKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -55,6 +56,15 @@ begin
       edtRole.SetFocus;
     end;
 
+end;
+
+procedure TFormLogin.edtRoleKeyPress(Sender: TObject; var Key: Char);
+begin
+ if Key = #13 then  // 13 adalah kode ASCII untuk Enter
+  begin
+    Key := #0;
+    btnLogin.Click; 
+  end;
 end;
 
 end.

@@ -13,8 +13,8 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TFormViewMenu, FormViewMenu);
-  Application.CreateForm(TFormKategori, FormKategori);
   Application.CreateForm(TFormLogin, FormLogin);
+  Application.CreateForm(TFormKategori, FormKategori);
   Application.CreateForm(TDataModule3, DataModule3);
   Application.CreateForm(TForm4, Form4);
   Application.Run;

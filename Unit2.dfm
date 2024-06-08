@@ -26,6 +26,7 @@ object FormLogin: TFormLogin
     Width = 145
     Height = 21
     TabOrder = 0
+    OnKeyPress = edtRoleKeyPress
   end
   object btnLogin: TButton
     Left = 160
