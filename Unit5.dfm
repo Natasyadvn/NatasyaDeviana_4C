@@ -1,90 +1,102 @@
-object Form5: TForm5
-  Left = 200
-  Top = 198
-  Width = 609
+object FormKategori: TFormKategori
+  Left = 560
+  Top = 253
+  Width = 538
   Height = 450
   Caption = 'KATEGORI'
   Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
+  Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'Tahoma'
+  Font.Height = -16
+  Font.Name = 'Verdana'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 18
   object lbl1: TLabel
-    Left = 120
+    Left = 56
     Top = 48
-    Width = 28
-    Height = 13
+    Width = 46
+    Height = 18
     Caption = 'NAME'
   end
   object lbl2: TLabel
-    Left = 120
+    Left = 40
     Top = 336
-    Width = 85
-    Height = 13
+    Width = 143
+    Height = 18
     Caption = 'MASUKKAN NAME'
   end
-  object edt1: TEdit
-    Left = 184
+  object edtName: TEdit
+    Left = 112
     Top = 48
     Width = 337
-    Height = 21
+    Height = 26
     TabOrder = 0
-    Text = 'edt1'
+    OnChange = edtNameChange
   end
-  object btn1: TButton
-    Left = 184
-    Top = 96
-    Width = 75
-    Height = 25
+  object btnInsert: TButton
+    Left = 120
+    Top = 88
+    Width = 89
+    Height = 41
     Caption = 'INSERT'
     TabOrder = 1
+    OnClick = btnInsertClick
   end
-  object btn2: TButton
-    Left = 280
-    Top = 96
-    Width = 75
-    Height = 25
+  object btnUpdate: TButton
+    Left = 232
+    Top = 88
+    Width = 89
+    Height = 41
     Caption = 'UPDATE'
     TabOrder = 2
+    OnClick = btnUpdateClick
   end
-  object btn3: TButton
-    Left = 384
-    Top = 96
-    Width = 75
-    Height = 25
+  object btnDelete: TButton
+    Left = 344
+    Top = 88
+    Width = 89
+    Height = 41
     Caption = 'DELETE'
     TabOrder = 3
+    OnClick = btnDeleteClick
   end
   object dbgrd1: TDBGrid
-    Left = 184
-    Top = 152
-    Width = 337
-    Height = 137
+    Left = 40
+    Top = 144
+    Width = 457
+    Height = 169
+    DataSource = DataModule3.dsKategori
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Verdana'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 4
-    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Height = -16
+    TitleFont.Name = 'Verdana'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
   end
-  object edt2: TEdit
-    Left = 224
+  object edtCari: TEdit
+    Left = 200
     Top = 336
     Width = 201
-    Height = 21
+    Height = 26
     TabOrder = 5
-    Text = 'edt2'
   end
-  object btn4: TButton
-    Left = 448
+  object btnCari: TButton
+    Left = 424
     Top = 336
     Width = 75
-    Height = 25
+    Height = 33
     Caption = 'CARI'
     TabOrder = 6
+    OnClick = btnCariClick
   end
 end
