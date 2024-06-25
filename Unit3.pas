@@ -11,6 +11,12 @@ type
     dsKategori: TDataSource;
     connection: TZConnection;
     queryZKategori: TZQuery;
+    queryZSatuan: TZQuery;
+    dsSatuan: TDataSource;
+    queryZSupplier: TZQuery;
+    dsSupplier: TDataSource;
+    queryZCustomer: TZQuery;
+    dsCustomer: TDataSource;
   private
     { Private declarations }
   public

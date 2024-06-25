@@ -36,9 +36,11 @@ object FormViewMenu: TFormViewMenu
       end
       object SATUAN1: TMenuItem
         Caption = 'SATUAN'
+        OnClick = SATUAN1Click
       end
       object SUPLIER1: TMenuItem
         Caption = 'SUPLIER'
+        OnClick = SUPLIER1Click
       end
       object KUSTOMER1: TMenuItem
         Caption = 'KUSTOMER'

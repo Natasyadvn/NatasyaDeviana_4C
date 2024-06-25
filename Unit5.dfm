@@ -1,7 +1,7 @@
 object FormKategori: TFormKategori
   Left = 560
   Top = 253
-  Width = 538
+  Width = 587
   Height = 450
   Caption = 'KATEGORI'
   Color = clBtnFace
@@ -17,56 +17,56 @@ object FormKategori: TFormKategori
   object lbl1: TLabel
     Left = 56
     Top = 48
-    Width = 46
+    Width = 47
     Height = 18
-    Caption = 'NAME'
+    Caption = 'NAMA'
   end
   object lbl2: TLabel
     Left = 40
     Top = 336
-    Width = 143
+    Width = 144
     Height = 18
-    Caption = 'MASUKKAN NAME'
+    Caption = 'MASUKKAN NAMA'
   end
   object edtName: TEdit
     Left = 112
     Top = 48
-    Width = 337
+    Width = 441
     Height = 26
     TabOrder = 0
     OnChange = edtNameChange
   end
-  object btnInsert: TButton
-    Left = 120
+  object btnNew: TButton
+    Left = 40
     Top = 88
     Width = 89
     Height = 41
-    Caption = 'INSERT'
+    Caption = 'BARU'
     TabOrder = 1
-    OnClick = btnInsertClick
+    OnClick = btnNewClick
   end
   object btnUpdate: TButton
-    Left = 232
+    Left = 256
     Top = 88
     Width = 89
     Height = 41
-    Caption = 'UPDATE'
+    Caption = 'UBAH'
     TabOrder = 2
     OnClick = btnUpdateClick
   end
   object btnDelete: TButton
-    Left = 344
+    Left = 360
     Top = 88
     Width = 89
     Height = 41
-    Caption = 'DELETE'
+    Caption = 'HAPUS'
     TabOrder = 3
     OnClick = btnDeleteClick
   end
   object dbgrd1: TDBGrid
     Left = 40
     Top = 144
-    Width = 457
+    Width = 513
     Height = 169
     DataSource = DataModule3.dsKategori
     Font.Charset = ANSI_CHARSET
@@ -98,5 +98,23 @@ object FormKategori: TFormKategori
     Caption = 'CARI'
     TabOrder = 6
     OnClick = btnCariClick
+  end
+  object btnClose: TButton
+    Left = 472
+    Top = 88
+    Width = 89
+    Height = 41
+    Caption = 'BATAL'
+    TabOrder = 7
+    OnClick = btnCloseClick
+  end
+  object btnInsert: TButton
+    Left = 144
+    Top = 88
+    Width = 89
+    Height = 41
+    Caption = 'SIMPEN'
+    TabOrder = 8
+    OnClick = btnInsertClick
   end
 end

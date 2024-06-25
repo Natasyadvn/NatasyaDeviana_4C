@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus,Unit2, Unit5;
+  Dialogs, Menus,Unit2, Unit5, Satuan, Supplier;
 
 type
   TFormViewMenu = class(TForm)
@@ -27,6 +27,8 @@ type
     procedure mmLoginClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure KATEGORI1Click(Sender: TObject);
+    procedure SATUAN1Click(Sender: TObject);
+    procedure SUPLIER1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,6 +62,20 @@ var form: TFormKategori;
 begin
    form := TFormKategori.Create(Application);
    form.ShowModal;
+end;
+
+procedure TFormViewMenu.SATUAN1Click(Sender: TObject);
+var form: TFormSatuan;
+begin
+  form := TFormSatuan.Create(Application);
+  form.ShowModal;
+end;
+
+procedure TFormViewMenu.SUPLIER1Click(Sender: TObject);
+var form: TFormSupplier;
+begin
+  form := TFormSupplier.Create(Application);
+  form.ShowModal;
 end;
 
 end.

@@ -10,25 +10,31 @@ type
   TFormKategori = class(TForm)
     lbl1: TLabel;
     edtName: TEdit;
-    btnInsert: TButton;
+    btnNew: TButton;
     btnUpdate: TButton;
     btnDelete: TButton;
     dbgrd1: TDBGrid;
     lbl2: TLabel;
     edtCari: TEdit;
     btnCari: TButton;
-    procedure btnInsertClick(Sender: TObject);
+    btnClose: TButton;
+    btnInsert: TButton;
+    procedure btnNewClick(Sender: TObject);
     procedure edtNameChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnUpdateClick(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
     procedure btnDeleteClick(Sender: TObject);
     procedure btnCariClick(Sender: TObject);
+    procedure btnInsertClick(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
   private
     { Private declarations }
     procedure SelectData;
     procedure ResetFormData;
     procedure FormattedGrid;
+    procedure clear;
+    procedure firstIndex;
   public
     { Public declarations }
   end;
@@ -43,31 +49,26 @@ uses ZDataset, ZAbstractRODataset, DB;
 
 {$R *.dfm}
 
-procedure TFormKategori.btnInsertClick(Sender: TObject);
+procedure TFormKategori.clear;
+begin
+  btnUpdate.Enabled := False;
+  btnInsert.Enabled := False;
+  btnDelete.Enabled := False;
+  btnNew.Enabled := False;
+  btnClose.Enabled := False;
+  edtName.Enabled := False;
+end;
+procedure TFormKategori.firstIndex;
+begin
+
+end;
+procedure TFormKategori.btnNewClick(Sender: TObject);
 var sqlText: string;
 begin
-  sqlText := 'INSERT INTO kategori (name) values (:name);';
-  idKategori := -1;
-  if (edtName.Text <> '') then
-  begin
-    with DataModule3.queryZKategori do
-    begin
-      SQL.Clear;
-      SQL.Text := sqlText;
-
-      ParamByName('name').AsString := edtName.Text;
-      ExecSQL;
-
-      SelectData;
-    end;
-
-    ShowMessage('Data Berhasil ditambahkan!');
-  end
-  else
-  begin
-     MessageDlg('Column Name tidak boleh kosong saat ingin Insert data', mtError, [mbOK], 0);
-     edtName.SetFocus;
-  end;
+  btnNew.Enabled := False;
+  btnClose.Enabled := True;
+  btnInsert.Enabled := True;
+  edtName.Enabled := True;
 end;
 
 
@@ -94,9 +95,8 @@ procedure TFormKategori.ResetFormData;
 begin
   edtName.Text := '';
   idKategori := -1;
-  btnInsert.Enabled := False;
-  btnUpdate.Enabled := False;
-  btnDelete.Enabled := False;
+  clear;
+  btnNew.Enabled := True;
 end;
 
 procedure TFormKategori.edtNameChange(Sender: TObject);
@@ -110,6 +110,7 @@ end;
 procedure TFormKategori.FormShow(Sender: TObject);
 begin
   FormattedGrid;
+  clear;
   idKategori := -1; // ketika id kosong tidak diisi menampilkan -1
 
   if edtName.Text <> '' then
@@ -122,6 +123,8 @@ begin
     btnUpdate.Enabled := False;
     btnDelete.Enabled := False;
   end;
+  btnNew.Enabled := True;
+
 end;
 
 procedure TFormKategori.btnUpdateClick(Sender: TObject);
@@ -150,8 +153,11 @@ begin
   edtName.Text := DataModule3.queryZKategori.Fields[1].AsString;
   idKategori := StrToInt(DataModule3.queryZKategori.Fields[0].AsString);
 
+  clear;
   btnUpdate.Enabled := True;
   btnDelete.Enabled := True;
+  btnClose.Enabled := True;
+  edtName.Enabled := True;
 end;
 
 procedure TFormKategori.btnDeleteClick(Sender: TObject);
@@ -187,6 +193,35 @@ begin
   end
   else
     SelectData;
+end;
+
+procedure TFormKategori.btnInsertClick(Sender: TObject);
+var sqlText: string;
+begin
+  sqlText := 'INSERT INTO kategori (name) values (:name);';
+  idKategori := -1;
+  if (edtName.Text <> '') then
+  begin
+    with DataModule3.queryZKategori do
+    begin
+      SQL.Clear;
+      SQL.Text := sqlText;
+
+      ParamByName('name').AsString := edtName.Text;
+      ExecSQL;
+
+      SelectData;
+    end;
+
+    ShowMessage('Data Berhasil ditambahkan!');
+  end
+end;
+
+procedure TFormKategori.btnCloseClick(Sender: TObject);
+begin
+  clear;
+  btnNew.Enabled := True;
+   edtName.Text := '';
 end;
 
 end.
